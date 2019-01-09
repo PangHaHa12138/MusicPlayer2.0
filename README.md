@@ -224,6 +224,7 @@ a MusicPlayer for Android
     }
  ```
 #
+<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc1.png" width="300"/>
 ![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc1.png)
 #
 ![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc2.png)
