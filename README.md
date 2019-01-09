@@ -1,6 +1,10 @@
 # MusicPlayerdemo
 a MusicPlayer for Android
 #
+<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc1.png" width="300"/>     <img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc2.png" width="300"/>
+
+<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc3.png" width="300"/>     <img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc4.png" width="300"/>
+#
 仿网易云音乐 可扫描本地音乐播放
 #
 核心播放页 唱盘的实现
@@ -223,10 +227,5 @@ a MusicPlayer for Android
         });
     }
  ```
- #
-<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc1.png" width="300"/>     <img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc2.png" width="300"/>
-
-<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc3.png" width="300"/>     <img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc4.png" width="300"/>
-
 
 
