@@ -3,6 +3,11 @@ a MusicPlayer for Android
 #
 仿网易云音乐 可扫描本地音乐播放
 #
+<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc1.png" width="300"/>
+<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc2.png" width="300"/>
+<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc3.png" width="300"/>
+<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc4.png" width="300"/>
+#
 #核心播放页 唱盘的实现
 #
 1:首先是背景高斯迷糊，先切割图片一部分，然后缩小图片，利用FastBlur高斯模糊 最后加上灰色遮罩
@@ -223,13 +228,6 @@ a MusicPlayer for Android
         });
     }
  ```
-#
-<img src="https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc1.png" width="300"/>
-![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc1.png)
-#
-![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc2.png)
-#
-![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc3.png)
-#
-![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc4.png)
+
+
 
