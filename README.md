@@ -227,5 +227,37 @@ a MusicPlayer for Android
         });
     }
  ```
-
+利用媒体库查询语句扫描本地音乐并返回集合
+```
+// 媒体库查询语句（写一个工具类MusicUtils）
+        try {
+            Cursor cursor = context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                    null, null, null, MediaStore.Audio.AudioColumns.IS_MUSIC);
+            if (cursor != null) {
+                while (cursor.moveToNext()) {
+                    Song song = new Song();
+                    song.song = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DISPLAY_NAME));
+                    song.singer = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST));
+                    song.path = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA));
+                    song.duration = cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DURATION));
+                    song.size = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.SIZE));
+                    song.image = pan[new Random().nextInt(pan.length)];
+//                    song.image = cursor.getInt(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID));
+                    if (song.size > 1000 * 800) {
+                        // 注释部分是切割标题，分离出歌曲名和歌手 （本地媒体库读取的歌曲信息不规范）
+                        if (song.song.contains("-")) {
+                            String[] str = song.song.split("-");
+                            song.singer = str[0];
+                            song.song = str[1];
+                        }
+                        list.add(song);
+                    }
+                }
+                // 释放资源
+                cursor.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+```
 
