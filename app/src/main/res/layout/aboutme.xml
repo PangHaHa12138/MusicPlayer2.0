@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.panghaha.it.mymusicplayerdemo.widget.CircleImageView
+        android:layout_marginTop="40dp"
+        android:src="@drawable/pan1"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:border_color="@color/white"/>
+
+    <TextView
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:text="庞哈哈12138"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:autoLink="email|phone|web"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:text="GitHub:https://github.com/PangHaHa12138"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:autoLink="email|phone|web"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:text="CSDN:http://blog.csdn.net/panghaha12138"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:autoLink="email|phone|web"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:text="简书:http://www.jianshu.com/u/4e577623e3f8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

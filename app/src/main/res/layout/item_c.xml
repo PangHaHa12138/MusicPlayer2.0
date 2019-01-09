@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <com.panghaha.it.mymusicplayerdemo.widget.RoundImageView
+            android:id="@+id/img1"
+            app:round_x="2dp"
+            app:round_y="2dp"
+            android:src="@drawable/pan1"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="2.5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_margin="5dp"
+            android:text="红红火火恍恍惚惚或或或或hhhhhhhh"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="#333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <com.panghaha.it.mymusicplayerdemo.widget.RoundImageView
+            android:id="@+id/img2"
+            app:round_x="2dp"
+            app:round_y="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pan1"
+            android:layout_marginLeft="2.5dp"
+            android:layout_marginRight="2.5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_margin="5dp"
+            android:text="红红火火恍恍惚惚或或或或hhhhhhhh"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="#333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <com.panghaha.it.mymusicplayerdemo.widget.RoundImageView
+            android:id="@+id/img3"
+            app:round_x="2dp"
+            app:round_y="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pan1"
+            android:layout_marginLeft="2.5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <TextView
+            android:id="@+id/txt3"
+            android:layout_margin="5dp"
+            android:text="红红火火恍恍惚惚或或或或hhhhhhhh"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="#333333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

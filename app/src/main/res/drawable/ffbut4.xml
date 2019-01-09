@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 默认时的背景图片-->
+    <item android:drawable="@drawable/t_recommend_icn_rank" />
+    <!-- 没有焦点时的背景图片 -->
+    <item android:state_window_focused="false"
+        android:drawable="@drawable/t_recommend_icn_rank" />
+    <!--选中时的图片背景-->
+    <item android:state_selected="true"   android:drawable="@drawable/t_recommend_icn_rank_prs" />
+    <!--获得焦点时的图片背景-->
+    <item android:state_focused="true"   android:drawable="@drawable/t_recommend_icn_rank_prs" />
+    <!--点击时的图片背景-->
+    <item android:state_pressed="true" android:drawable="@drawable/t_recommend_icn_rank_prs" />
+</selector>

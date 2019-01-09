@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.panghaha.it.mymusicplayerdemo">
+
+    <!-- 读写 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:name=".App"
+        android:resizeableActivity="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:theme">
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <activity android:name=".UI.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".UI.MusicListActivity"/>
+        <activity android:name=".UI.TanTanActivity"/>
+        <activity android:name=".UI.MusicPlayActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+        <activity android:name=".UI.GirleImgActivity"/>
+        <activity android:name=".UI.OFOActivity"/>
+        <activity android:name=".UI.MobikeActivity"/>
+        <activity android:name=".UI.AboutmeActivity"/>
+        <activity android:name=".UI.JianLiActivity"/>
+        <activity android:name=".UI.FriendActivty"/>
+        <activity android:name=".UI.FishActivity"/>
+        <service
+            android:name=".service.MusicService"
+            android:enabled="true"
+            android:exported="false"
+            />
+        <activity android:name=".douyin.DouyinActivity"
+            android:theme="@style/main_theme"/>
+
+    </application>
+
+</manifest>

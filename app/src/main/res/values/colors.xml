@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#e54343</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="red">#FF4081</color>
+    <color name="red2">#e54343</color>
+    <color name="black">#000000</color>
+    <color name="hint">#f0f0f0</color>
+    <color name="bg">#c9cbcd</color>
+
+    <color name="card_background">#ffffff</color>
+
+    <color name="touming">#00000000</color>
+
+    <color name="card_shadow">#10000000</color>
+</resources>

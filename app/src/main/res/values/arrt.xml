@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeFlingAdapterView">
+        <attr name="SwipeFlingStyle" format="reference" />
+        <attr name="rotation_degrees" format="float" />
+        <attr name="min_adapter_stack" format="integer" />
+        <attr name="max_visible" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="round_x" format="dimension" />
+        <attr name="round_y" format="dimension" />
+        <attr name="left_top_x" format="dimension"/>
+        <attr name="left_top_y" format="dimension"/>
+        <attr name="right_top_x" format="dimension"/>
+        <attr name="right_top_y" format="dimension"/>
+        <attr name="right_bottom_x" format="dimension"/>
+        <attr name="right_bottom_y" format="dimension"/>
+        <attr name="left_bottom_x" format="dimension"/>
+        <attr name="left_bottom_y" format="dimension"/>
+    </declare-styleable>
+</resources>

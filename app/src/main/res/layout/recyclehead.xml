@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            >
+            <ImageView
+                android:src="@drawable/ffbut"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:text="生日快乐"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp">
+            <ImageView
+                android:src="@drawable/ffbut2"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:text="语瞳FM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp">
+            <ImageView
+                android:src="@drawable/ffbut3"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="70dp"
+                android:text="每日推荐"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp">
+            <ImageView
+                android:src="@drawable/ffbut4"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:text="热歌榜"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
