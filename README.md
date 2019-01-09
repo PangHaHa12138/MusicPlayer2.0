@@ -2,7 +2,9 @@
 a MusicPlayer for Android
 #
 仿网易云音乐 可扫描本地音乐播放
-##核心播放页 唱盘的实现
+#
+#核心播放页 唱盘的实现
+#
 1:首先是背景高斯迷糊，先切割图片一部分，然后缩小图片，利用FastBlur高斯模糊 最后加上灰色遮罩
 ```
  private Drawable getForegroundDrawable(int musicPicRes) {
@@ -129,12 +131,104 @@ a MusicPlayer for Android
                 musicPicRes, options), musicPicSize, musicPicSize, true);
     }
  ```
+ 3:唱盘指针 其实是一张图片，设置它的旋转起始坐标点，监听viewPager的滑动利用ObjectAnimator旋转指针
+ ```
+  private void initNeedle() {
+        mIvNeedle = (ImageView) findViewById(R.id.ivNeedle);
+
+        int needleWidth = (int) (DisplayUtil.SCALE_NEEDLE_WIDTH * mScreenWidth);
+        int needleHeight = (int) (DisplayUtil.SCALE_NEEDLE_HEIGHT * mScreenHeight);
+
+        /*设置手柄的外边距为负数，让其隐藏一部分*/
+        int marginTop = (int) (DisplayUtil.SCALE_NEEDLE_MARGIN_TOP * mScreenHeight) * -1;
+        int marginLeft = (int) (DisplayUtil.SCALE_NEEDLE_MARGIN_LEFT * mScreenWidth);
+
+        Bitmap originBitmap = BitmapFactory.decodeResource(getResources(), R.drawable
+                .ic_needle);
+        Bitmap bitmap = Bitmap.createScaledBitmap(originBitmap, needleWidth, needleHeight, false);
+
+        LayoutParams layoutParams = (LayoutParams) mIvNeedle.getLayoutParams();
+        layoutParams.setMargins(marginLeft, marginTop, 0, 0);
+
+        int pivotX = (int) (DisplayUtil.SCALE_NEEDLE_PIVOT_X * mScreenWidth);
+        int pivotY = (int) (DisplayUtil.SCALE_NEEDLE_PIVOT_Y * mScreenWidth);
+
+        mIvNeedle.setPivotX(pivotX);
+        mIvNeedle.setPivotY(pivotY);
+        mIvNeedle.setRotation(DisplayUtil.ROTATION_INIT_NEEDLE);
+        mIvNeedle.setImageBitmap(bitmap);
+        mIvNeedle.setLayoutParams(layoutParams);
+    }
+
+    private void initObjectAnimator() {
+        mNeedleAnimator = ObjectAnimator.ofFloat(mIvNeedle, View.ROTATION, DisplayUtil
+                .ROTATION_INIT_NEEDLE, 0);
+        mNeedleAnimator.setDuration(DURATION_NEEDLE_ANIAMTOR);
+        mNeedleAnimator.setInterpolator(new AccelerateInterpolator());
+        mNeedleAnimator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+                /**
+                 * 根据动画开始前NeedleAnimatorStatus的状态，
+                 * 即可得出动画进行时NeedleAnimatorStatus的状态
+                 * */
+                if (needleAnimatorStatus == NeedleAnimatorStatus.IN_FAR_END) {
+                    needleAnimatorStatus = NeedleAnimatorStatus.TO_NEAR_END;
+                } else if (needleAnimatorStatus == NeedleAnimatorStatus.IN_NEAR_END) {
+                    needleAnimatorStatus = NeedleAnimatorStatus.TO_FAR_END;
+                }
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+
+                if (needleAnimatorStatus == NeedleAnimatorStatus.TO_NEAR_END) {
+                    needleAnimatorStatus = NeedleAnimatorStatus.IN_NEAR_END;
+                    int index = mVpContain.getCurrentItem();
+                    playDiscAnimator(index);
+                    musicStatus = MusicStatus.PLAY;
+                } else if (needleAnimatorStatus == NeedleAnimatorStatus.TO_FAR_END) {
+                    needleAnimatorStatus = NeedleAnimatorStatus.IN_FAR_END;
+                    if (musicStatus == MusicStatus.STOP) {
+                        mIsNeed2StartPlayAnimator = true;
+                    }
+                }
+
+                if (mIsNeed2StartPlayAnimator) {
+                    mIsNeed2StartPlayAnimator = false;
+                    /**
+                     * 只有在ViewPager不处于偏移状态时，才开始唱盘旋转动画
+                     * */
+                    if (!mViewPagerIsOffset) {
+                        /*延时500ms*/
+                        DiscView.this.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                playAnimator();
+                            }
+                        }, 50);
+                    }
+                }
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+ ```
 #
-![image](https://github.com/PangHaHa12138/MusicPlayerdemo/blob/master/Screenshot/doc1.png)
+![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc1.png)
 #
-![image](https://github.com/PangHaHa12138/MusicPlayerdemo/blob/master/Screenshot/doc2.png)
+![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc2.png)
 #
-![image](https://github.com/PangHaHa12138/MusicPlayerdemo/blob/master/Screenshot/doc3.png)
+![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc3.png)
 #
-![image](https://github.com/PangHaHa12138/MusicPlayerdemo/blob/master/Screenshot/doc4.png)
+![image](https://github.com/PangHaHa12138/MusicPlayer2.0/blob/master/Screenshot/doc4.png)
 
